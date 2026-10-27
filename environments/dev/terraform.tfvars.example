@@ -1,0 +1,18 @@
+aws_region           = "ap-south-1"
+project_name         = "task-manager"
+environment          = "dev"
+
+# Set this to an image URI that already exists and can be pulled by ECS.
+# Example: "123456789012.dkr.ecr.ap-south-1.amazonaws.com/task-manager-api:dev"
+api_image            = "REPLACE_WITH_YOUR_API_IMAGE_URI"
+# ECS valueFrom ARN for the JSON key, including the :MONGODB_URI:: suffix.
+mongodb_uri_secret_arn = "REPLACE_WITH_YOUR_SECRET_ARN:MONGODB_URI::"
+
+api_container_port   = 4000
+api_cpu              = 256
+api_memory           = 512
+api_desired_count    = 1
+health_check_path    = "/health"
+
+frontend_price_class = "PriceClass_100"
+alarm_email          = ""
